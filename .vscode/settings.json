@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/16185191-bc6d-4002-b2fe-7455df318929/appservices/subscriptions/16185191-bc6d-4002-b2fe-7455df318929/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/infr3120-us-project",
+    "appService.deploySubpath": "."
+}

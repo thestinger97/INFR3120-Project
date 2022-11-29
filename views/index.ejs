@@ -1,0 +1,62 @@
+<!-- Home Page-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hall Of Champions</title>
+  <meta charset="utf-8">
+  <link href="stylesheets/style.css" rel="stylesheet" type="text/css" media="only screen and (min-width:960px)">
+
+</head>
+  
+  <body>
+
+<h1>Welcome To The Hall Of Champions</h1>
+<img src = "/images/nervous.jpg" id = "logo">
+<br>
+<a href = "/add_wrestler"> Add Wrestler</a>
+
+<p>The hall of champions is a database consisting of world's greatest wrestlers. You can add a wrestler, update a wrestler or delete a wrestler</p>
+<p>Enter your legend and help him/her become the greatest champion of all time!<p>
+
+<div class="container">
+  <table>
+    <tr>
+      <th>Wrestler Name</th>
+      <th>World Championships</th>
+      <th>Companies</th>
+      <th>Years Active </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+
+    <% for(let count = 0; count < WrestlersList.length; count ++){ %>
+      <tr>
+      <td class = "text-center"> <%= WrestlersList[count].wrestler_name %> </td>
+      <td class = "text-center"> <%= WrestlersList[count].world_championships %> </td>
+      <td class = "text-center"> <%= WrestlersList[count].companies %> </td>
+      <td class = "text-center"> <%= WrestlersList[count].years_active %> </td>
+      <td class = "text-center">
+        <a href = "/update_wrestler/id/<%= WrestlersList[count]._id %>"
+          class="btn btn-primary"
+          <i class = "fas fa-pencil alt "> </i> Edit </a        
+      </td>
+      <td class = "text-center">
+        <a href = "/remove_wrestler/id/<%= WrestlersList[count]._id %> "
+          class="btn btn-primary"
+          <i class = "fas fa-pencil alt "> </i> Delete </a        
+      </td>
+
+      </tr>
+      
+      <% } %>
+    </table>
+</div>
+
+
+
+
+  </body>
+  
+  
+  </html>

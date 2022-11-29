@@ -1,0 +1,10 @@
+#logo {
+
+  width: 20%;
+}
+
+
+table, th, td {
+  width: 35%;
+  border:3px solid black;
+}
