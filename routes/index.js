@@ -3,7 +3,7 @@
 
 var express = require('express');
 var router = express.Router();
-let Wrestlers = require("../models/wrestlers")
+let Wrestlers = require("../models/wrestlers");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -16,11 +16,13 @@ Wrestlers.find((err, WrestlersList) =>{
   }
   else {
 
-    res.render("index", {title: "", WrestlersList: WrestlersList });
+    res.render("index", {title: "", WrestlersList: WrestlersList, displayName: req.user ? req.user.displayName: ""});
   }
 
 });
 
 });
+
+
 
 module.exports = router;

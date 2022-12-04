@@ -8,3 +8,8 @@ table, th, td {
   width: 35%;
   border:3px solid black;
 }
+
+.navbar{
+
+  float:right;
+}
