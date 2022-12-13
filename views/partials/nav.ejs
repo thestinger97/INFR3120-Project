@@ -1,20 +1,29 @@
 <!--NavBar -->
-<nav>
-<div class="navbar">
 
-        <% if(typeof displayName =='string' && displayName) { %>
-          <li class="navbar-text">
-          <i class="fas fa-lg fa-user"></i>
-          Hello <%= displayName %> </li>
-          <li class="nav-item">
-          <a href="/logout" class="nav-link">
-          <i class="fas fa-lg fa-sign-out-alt"></i>Logout</a></li>
-        <% } else { %>
-          <li class="nav-item">
-            <a href="/login" class="nav-link">
-            <i class="fas fa-lg fa-sign-in-alt"></i>Login</a></li>
-        <% } %>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <p class="navbar-brand">Hall Of Champions</p>
+    </div>
+    <ul class="nav navbar-nav">
+      <img src = "/images/nervous.jpg" id = "logo">
+      <li ><a href="/">Home Page</a></li>
+      <li><a href = "/add_wrestler"> Add Wrestler</a></li>
+            <% if(typeof displayName =='string' && displayName) { %>
+              <li class="navbar-text">
+              <i class="fas fa-lg fa-user"></i>
+              Hello <%= displayName %> </li>
+              <li class="nav-item">
+              <a href="/logout" class="nav-link">
+              <i class="fas fa-lg fa-sign-out-alt"></i>Logout</a></li>
+            <% } else { %>
+              <li class="nav-item">
+                <a href="/login" class="nav-link">
+                <i class="fas fa-lg fa-sign-in-alt"></i>Login</a></li>
+            <% } %>
+           
+    </ul>
+  </div>
+</nav>
   
-      </div>
-
-  </nav>

@@ -1,12 +1,11 @@
-# INFR3120-Project
-# Utku Soytekin
-# 100832943
+#INFR 3120 Project Part 3
+#Utku Soytekin
+#100832943
 
-Project part 2. Full CRUD application with authentication. 
+INFR 3120 Project Part 3: Final release of Hall of Champions Website
+The website has been done completely by me.
+Full CRUD application with authentication.
+Bootstrap used for the navbar - Reference: https://www.w3schools.com/bootstrap/bootstrap_navbar.asp
 
 Website url: https://infr3120-us-project.azurewebsites.net/
-Youtube demo link: https://www.youtube.com/watch?v=BdMzbOu_6mM
 
-Github link: https://github.com/thestinger97/INFR3120-Project
-
-The TAs are invited as collaborators to the project repository.

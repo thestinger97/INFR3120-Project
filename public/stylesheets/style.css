@@ -1,15 +1,164 @@
 #logo {
+ position:absolute;
+ top:0px;
+ right:0px;
+ width:6%; 
 
-  width: 20%;
 }
 
 
 table, th, td {
   width: 35%;
   border:3px solid black;
+  margin-left: 25%;
 }
 
-.navbar{
 
+.navbar.navbar-inverse {
+background-color: purple;
+
+}
+
+
+
+body,html{
+  margin:0;
+  width:100%;
+  background-color: pink;
+}
+
+h1{
+  text-align: center;
+  color:black;
+}
+
+#flair{
+  float:left;
+  width: 18%;
+  margin-left: 7%;
+}
+
+#hogan{
   float:right;
+  width: 20%;
+  margin-right: 8%;
 }
+
+p{
+  margin-left: 1%;
+  color:black;
+}
+
+.btn.btn-primary{
+  background-color: purple;
+  border-color: purple;
+}
+
+
+.navbar.navbar-inverse *{
+  color:white;
+}
+
+.nav.navbar-nav li a {
+  color: white;
+}
+
+.btn.btn-success{
+  background-color: purple;
+  border-color:purple;
+}
+
+.btn.btn-warning{
+  background-color: purple;
+  border-color:purple;
+}
+
+#macho{
+  float:left;
+  width:25%;
+  margin-left: 10%;
+
+}
+
+#sting{
+  float:right;
+  width:17.5%;
+  margin-right: 15%;
+}
+
+form{
+  margin-left: 5%;
+
+
+}
+
+.form{
+  width:35%;
+}
+
+button{
+  background-color: purple;
+  border-color: purple;
+  color:white;
+}
+
+#bret{
+
+  width:22%;
+  float: left;
+  margin-left: 7%;
+}
+
+#punk{
+
+  width:22%;
+  float: right;
+  margin-right: 7%;
+}
+
+#shawn {
+
+  width:22%;
+  float: left;
+  margin-left: 12%;
+}
+
+#hhh{
+
+  width:25%;
+  float:right;
+  margin-right:10%;
+}
+
+#cody{
+
+  width:20%;
+  float:left;
+  margin-left:10%
+}
+
+#cena {
+
+  width:25%;
+  float:right;
+  margin-right: 5%;
+}
+
+.bottom{
+  overflow: hidden;
+  background-color: purple;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.bottom p {
+
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
