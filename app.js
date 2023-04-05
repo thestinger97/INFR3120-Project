@@ -8,18 +8,17 @@ let passport = require("passport");
 let passportLocal = require("passport-local");
 let localStrategy = passportLocal.Strategy;
 let flash = require("connect-flash");
-let userModel = require("./models/users");
-let User = userModel.User;
 var app = express();
 
 var indexRouter = require('./routes/index');
-var addwrestler_Router = require('./routes/add_wrestler');
-var updatewrestler_Router = require("./routes/update_wrestler");
-var removewrestler_Router = require("./routes/remove_wrestler");
+var Current_Jerseys_Router = require('./routes/current_jerseys');
+var add_cart_Router = require("./routes/add_cart");
+var shopping_cart_Router = require("./routes/shopping_cart");
 var loginRouter = require("./routes/login");
 var registerRouter = require("./routes/register");
 var logoutRouter = require("./routes/logout");
-
+var Vintage_Jerseys_Router = require('./routes/vintage_jerseys');
+var categories_router = require("./routes/categories")
 //setup express session
 
 app.use(session({
@@ -30,12 +29,11 @@ app.use(session({
   }))
  
   // implement a user authentication
-  passport.use(User.createStrategy());
+ 
  
  
    //serialize and deserialize the user information
-   passport.serializeUser(User.serializeUser());
-   passport.deserializeUser(User.deserializeUser());
+
  
  
   //initialize passport
@@ -59,12 +57,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/add_wrestler', addwrestler_Router);
-app.use("/update_wrestler", updatewrestler_Router);
-app.use("/remove_wrestler", removewrestler_Router);
+app.use('/current_jerseys', Current_Jerseys_Router);
+app.use("/add_cart", add_cart_Router);
+app.use("/shopping_cart", shopping_cart_Router);
 app.use("/login", loginRouter);
 app.use("/register", registerRouter);
 app.use("/logout", logoutRouter);
+app.use("/vintage_jerseys", Vintage_Jerseys_Router)
+app.use("/categories", categories_router)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

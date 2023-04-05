@@ -1,24 +1,21 @@
 var express = require('express');
-const mongoose = require("mongoose");
-const MONGO_URI = "mongodb+srv://admin:messi3647@project.eomrtct.mongodb.net/Project"
+const mysql = require("mysql");
+const db = mysql.createConnection({
+host : "infr3810.czewdya70obt.us-east-2.rds.amazonaws.com",
+port : "3306",
+user : "admin",
+password: "messi3647",
+database: "INFR3810_db"
+,
+});
 
 //connect to db
 
-const connectionParams = {
+db.connect((err) =>{
+if (err){
+  console.log(err.message);
+  return;
+}
+console.log("Database Connected hehehe ")
 
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-};
-
-mongoose
- .connect(MONGO_URI, connectionParams)
- .then(() =>{
-  console.info("Connected to the DB");
-  
-})
- .catch((e) => {
-    console.log("Error:", e);
- });
-
-
- 
+});

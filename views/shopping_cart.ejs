@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("partials/nav.ejs"); %>
+<head>
+  <title>Shopping Cart</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="stylesheets/style.css" rel="stylesheet" type="text/css" media="only screen and (min-width:960px)">
+
+
+
+</head>
+  
+<body>
+<h1 class = "text-center mt-3 mb-3"><%=title%></h1>
+<% if(action =='add') { %>
+
+
+<%} else { %>
+
+<div class = "card">
+  <div class = "card-header">
+    <div class = "row">
+      <div class = "row">
+        </div>
+        </div>
+        <div class = "card-body">
+          <div class = "table responsive">
+            <table class="table table-bordered">
+              <tr>
+                  <th>Team Name</th>
+                  <th>Size</th>
+                  <th>Color</th>
+              </tr>
+              <%
+              if(sampleData.length > 0)
+              {
+                  sampleData.forEach(function(data){
+              %>
+              <tr>
+                  <td><%= data.team %></td>
+                  <td><%= data.size %></td>
+                  <td><%= data.color %></td>
+                    
+              </tr>
+              <%
+                  });
+              }
+              else
+              {
+              %>
+              <tr>
+                  <td colspan="5">No Data Found</td>
+              </tr>
+              <%
+              }
+              %>
+          </table>
+      </div>
+  </div>
+</div>
+
+<% } %>
+
+</div> 
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+<%- include("partials/foot.ejs"); %>
+
+</html>

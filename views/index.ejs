@@ -5,7 +5,7 @@
 <html lang="en">
 <%- include("partials/nav.ejs"); %>
 <head>
-  <title>Hall Of Champions</title>
+  <title>JerseyMania</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -16,46 +16,13 @@
 
   <body>
 
-<h1>Welcome To The Hall Of Champions</h1>
+<h1>Welcome To JerseyMania!</h1>
 <br>
-<p>The hall of champions is a database consisting of world's greatest wrestlers. You can add a wrestler, update a wrestler or delete a wrestler</p>
-<p>Enter your legend and help him/her become the greatest champion of all time!<p>
+<p>JerseyMania is a website, containing a collection of vintage jerseys of your favourite football teams. Create an account or login to start searching!<p>
 <br>
-<img src = "/images/flair.jpg" id = "flair">
-<img src = "/images/hogan.jpg" id = "hogan">
-<div class="container">
-  <table>
-    <tr>
-      <th>Wrestler Name</th>
-      <th>World Championships</th>
-      <th>Companies</th>
-      <th>Years Active </th>
-      <th> </th>
-      <th> </th>
-    </tr>
-
-    <% for(let count = 0; count < WrestlersList.length; count ++){ %>
-      <tr>
-      <td class = "text-center"> <%= WrestlersList[count].wrestler_name %> </td>
-      <td class = "text-center"> <%= WrestlersList[count].world_championships %> </td>
-      <td class = "text-center"> <%= WrestlersList[count].companies %> </td>
-      <td class = "text-center"> <%= WrestlersList[count].years_active %> </td>
-      <td class = "text-center">
-        <a href = "/update_wrestler/id/<%= WrestlersList[count]._id %>"
-          class="btn btn-primary"
-          <i class = "fas fa-pencil alt "> </i> Edit </a        
-      </td>
-      <td class = "text-center">
-        <a href = "/remove_wrestler/id/<%= WrestlersList[count]._id %> "
-          class="btn btn-primary"
-          <i class = "fas fa-pencil alt "> </i> Delete </a        
-      </td>
-
-      </tr>
-      
-      <% } %>
-    </table>
-</div>
+<img src = "/images/real.jpg" id = "real">
+<img src = "/images/manu.jpg" id = "manu">
+<img src = "/images/barca.jpg" id = "barca">
 
   </body>
   <%- include("partials/foot.ejs"); %>

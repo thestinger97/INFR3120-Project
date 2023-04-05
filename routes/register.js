@@ -1,59 +1,52 @@
 var express = require('express');
-const passport = require('passport');
 var router = express.Router();
-let userModel = require("../models/users");
-let User = userModel.User;
+const mysql = require("mysql");
+const db = mysql.createConnection({
+  host : "infr3810.czewdya70obt.us-east-2.rds.amazonaws.com",
+  port : "3306",
+  user : "admin",
+  password: "messi3647",
+  database: "INFR3810_db"
+  ,
+  });
+
 
 router.get("/", function(req, res, next) {
-    if (!req.user){
-    res.render("register", { 
-      title: "Register",
-      //message: req.flash("loginMessage "),
-      displayName: req.user ? req.user.displayName: " "
-     })
-     }
-    else {
-    
-      return res.redirect("/")
-    }
-    })
-    
-    router.post("/", function (req,res, next) {
-        let newUser = new User({
-        username : req.body.username,
-        password : req.body.password,
-        email : req.body.email,
-        displayName : req.body.displayName
-        
-        })
-        User.register(newUser, req.body.password, (err) => {
-        if (err){
-        
-          console.log("Error: Insterting the new user");
-        
-        if (err.name == "UserExistsError"){
-        
-          req.flash("registerMessage",
-          "Registration Error: User Already Exists");
-        }
-        return res.render("register", 
-        {
-        title: "Register",
-        message: req.flash("registerMessage"),
-        displayName: req.user ? req.user.displayName: " "
-        
-        
-        
-        });
-        }
-        else{
-        return passport.authenticate("local")(req, res, () =>
-        {
-          res.redirect("/");
-        })
-        }})
-        })
+  res.render("register", {title:'Insert Data into MySQL', action:'add'});
 
+    })
+
+
+
+    
+router.post("/", function(request, response, next){
+
+	var username = request.body.username;
+
+	var password = request.body.password;
+
+	
+
+	var query = `
+	INSERT INTO Users
+	(id, username, password) 
+	VALUES (3, "${username}", "${password}")
+	`;
+
+	db.query(query, function(error, data){
+
+		if(error)
+		{
+			throw error;
+		}	
+		else
+		{
+			response.redirect("/");
+		}
+
+	});
+
+});
 
 
 
